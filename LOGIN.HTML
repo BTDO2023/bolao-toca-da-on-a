@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .login-container {
+            text-align: center;
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+        }
+
+        button {
+            padding: 8px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 45%;
+            margin-right: 5px;
+        }
+
+        #entrar-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #cancelar-btn {
+            background-color: #FF0000;
+            color: white;
+        }
+    </style>
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "123456") {
+                alert("Login successful!");
+                window.location.href = "file:///C:/xampp/htdocs/BOLAO/index.html";
+            } else {
+                alert("Invalid username or password. Try again.");
+            }
+        }
+
+        function cancel() {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>BOLÃO TOCA DA ONÇA</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <br>
+        <input type="password" id="password" placeholder="Password" />
+        <br>
+        <button id="entrar-btn" onclick="login()">Entrar</button>
+        <button id="cancelar-btn" onclick="cancel()">Cancelar</button>
+    </div>
+</body>
+</html>
